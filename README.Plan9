@@ -1,0 +1,6 @@
+An attempt at building zsh on plan9/APE using pdcurses + the old pdcurses stubs for terminfo + pcre.
+
+configure hack:
+
+CFLAGS="-D_POSIX_SOURCE -D_SUSV2_SOURCE -D_RESEARCH_SOURCE -D_REENTRANT_SOURCE -D_BSD_EXTENSION -D_NET_EXTENSION -D_LIMITS_EXTENSION -D_C99_SNPRINTF_EXTENSION -D_REGEXP_EXTENSION -DHAVE_SOCK_OPTS" GREP=grep ac_cv_search_tgetent=true configure --prefix=/sys --exec-prefix=/$objtype --libdir=/$objtype/lib/ape --includedir=/sys/include/ape --datadir=/sys --disable-cpp --disable-dependency-tracking --enable-pcre --disable-dynamic --disable-locale --with-term-lib=/$objtype/lib/ape/libterm.a --without-tcsetpgrp
+

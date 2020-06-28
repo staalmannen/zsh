@@ -2329,7 +2329,7 @@ tcoutarg(int cap, int arg)
 {
     char *result;
 
-    result = tgoto(tcstr[cap], arg, arg);
+    result = (char *) tgoto(tcstr[cap], arg, arg);
     if (tcout_func_name) {
 	tcout_via_func(cap, arg, putshout);
     } else {

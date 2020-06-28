@@ -103,7 +103,7 @@ fillnameddirtable(UNUSED(HashTable ht))
 
 	/* loop through the password file/database *
 	 * and add all entries returned.           */
-	while ((pw = getpwent()) && !errflag)
+	while ((pw = (struct passwd *) getpwent()) && !errflag)
 	    adduserdir(pw->pw_name, pw->pw_dir, ND_USERNAME, 1);
 
 	endpwent();

@@ -1,7 +1,7 @@
 /*
  * system.h - system configuration header file
  *
- * This file is part of zsh, the Z shell.
+ * This file is part of zsh, the Z shell. SETUID
  *
  * Copyright (c) 1992-1997 Paul Falstad
  * All rights reserved.
@@ -464,11 +464,11 @@ struct timespec {
    * - Teach zsh how to do the equivalent of setreuid() on your system
    * - Remove support for PRIVILEGED option, and then remove the #error.
    */
-# error "Don't know how to change UID"
+// # error "Don't know how to change UID"
 #endif
 #if !defined(HAVE_SETREGID) && !(defined(HAVE_SETEGID) && defined(HAVE_SETGID))
   /* See above comment. */
-# error "Don't know how to change GID"
+// # error "Don't know how to change GID"
 #endif
 
 /* Provide setresuid(). */
