@@ -981,6 +981,7 @@ should_report_time(Job j)
 {
     struct value vbuf;
     Value v;
+	long clktck;
     char *s = "REPORTTIME";
     int save_errflag = errflag;
     zlong reporttime = -1;

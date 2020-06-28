@@ -2078,13 +2078,13 @@ set_colour_attribute(zattr atr, int fg_bg, int flags)
 		    addbufspc(1);
 		    *bv->bp++ = Inpar;
 		}
-		tputs(tgoto(tcstr[tc], colour, colour), 1, putstr);
+		tputs((char *) tgoto(tcstr[tc], colour, colour), 1, putstr);
 		if (!bv->dontcount) {
 		    addbufspc(1);
 		    *bv->bp++ = Outpar;
 		}
 	    } else {
-		tputs(tgoto(tcstr[tc], colour, colour), 1, putshout);
+		tputs((char *) tgoto(tcstr[tc], colour, colour), 1, putshout);
 	    }
 	    /* That worked. */
 	    return;

@@ -4,7 +4,7 @@
 #
 #
 # Copyright (C) 1992-1996, 1998-2012 Free Software Foundation, Inc.
-#
+# ls -
 #
 # This configure script is free software; the Free Software Foundation
 # gives unlimited permission to copy, distribute and modify it.
@@ -1263,8 +1263,8 @@ test "$silent" = yes && exec 6>/dev/null
 
 
 ac_pwd=`pwd` && test -n "$ac_pwd" &&
-ac_ls_di=`ls -di .` &&
-ac_pwd_ls_di=`cd "$ac_pwd" && ls -di .` ||
+ac_ls_di=`ls -d .` &&
+ac_pwd_ls_di=`cd "$ac_pwd" && ls -d .` ||
   as_fn_error $? "working directory cannot be determined"
 test "X$ac_ls_di" = "X$ac_pwd_ls_di" ||
   as_fn_error $? "pwd does not report name of working directory"
