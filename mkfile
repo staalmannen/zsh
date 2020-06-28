@@ -39,7 +39,7 @@ BIN=/$objtype/bin
 
 CC=pcc
 LD=pcc
-CFLAGS=-I. -I./Src -D_POSIX_SOURCE -D_SUSV2_SOURCE -D_BSD_EXTENSION
+CFLAGS=-I. -I./Src -I./Src/Builtins -I./Src/Modules -I./Src/Zle -D_POSIX_SOURCE -D_SUSV2_SOURCE -D_BSD_EXTENSION -DPCRE_STATIC -DHAVE_CONFIG_H
 
 
 %.$O : Src/%.c

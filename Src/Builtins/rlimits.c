@@ -30,6 +30,14 @@
 #include "rlimits.mdh"
 #include "rlimits.pro"
 
+#if !defined(HAVE_GETRLIMIT)
+
+static void set_resinfo(void) {}
+
+static void free_resinfo(void) {}
+
+#endif
+
 #if defined(HAVE_GETRLIMIT) && defined(RLIM_INFINITY)
 
 enum zlimtype {

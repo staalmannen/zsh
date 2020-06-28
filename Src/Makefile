@@ -127,7 +127,7 @@ runhelp         = runhelp
 # compilation
 CC              = cc
 CPP             = cc -E
-CPPFLAGS        =  -I/sys/include/ape -DPCRE_STATIC
+CPPFLAGS        =  -I/sys/include/ape -DPCRE_STATIC -DRLIM_INFINITY
 DEFS            = -DHAVE_CONFIG_H
 CFLAGS          = -D_POSIX_SOURCE -D_SUSV2_SOURCE -D_RESEARCH_SOURCE -D_REENTRANT_SOURCE -D_BSD_EXTENSION -D_NET_EXTENSION -D_LIMITS_EXTENSION -D_C99_SNPRINTF_EXTENSION -D_REGEXP_EXTENSION -DHAVE_SOCK_OPTS
 LDFLAGS         = 
