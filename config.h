@@ -1,5 +1,5 @@
 /* config.h.  Generated from config.h.in by configure.  */
-/* config.h.in.  Generated from configure.ac by autoheader. */
+/* config.h.in.  Generated from configure.ac by autoheader.*/
 
 /***** begin user configuration section *****/
 
@@ -624,7 +624,9 @@
 /* #undef HAVE_SETENV */
 
 /* Define to 1 if you have the `seteuid' function. */
-/* #undef HAVE_SETEUID */
+/* hackig ... */
+#define HAVE_SETEUID 1
+#define seteuid setuid
 
 /* Define to 1 if you have the `setgid' function. */
 #define HAVE_SETGID 1
@@ -648,10 +650,14 @@
 /* #undef HAVE_SETRESGID */
 
 /* Define to 1 if you have the `setresuid' function. */
-/* #undef HAVE_SETRESUID */
+/* Hacking ... */
+#define HAVE_SETRESUID 1
+#define setresuid(x, y, z) setuid(x)
 
 /* Define to 1 if you have the `setreuid' function. */
-/* #undef HAVE_SETREUID */
+/* Hacking...*/
+#define HAVE_SETREUID 1
+#define setreuid(x, y) setuid(x)
 
 /* Define to 1 if you have the `setsid' function. */
 #define HAVE_SETSID 1
