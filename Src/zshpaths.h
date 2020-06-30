@@ -1,6 +1,0 @@
-#define MODULE_DIR "/386/lib/ape/zsh/5.8.0.2-dev"
-#define SITESCRIPT_DIR "/sys/zsh/scripts"
-#define SCRIPT_DIR "/sys/zsh/5.8.0.2-dev/scripts"
-#define SITEFPATH_DIR "/sys/zsh/site-functions"
-#define FIXED_FPATH_DIR "/usr/local/share/zsh/site-functions"
-#define FPATH_DIR "/sys/zsh/5.8.0.2-dev/functions"

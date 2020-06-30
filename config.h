@@ -650,14 +650,12 @@
 /* #undef HAVE_SETRESGID */
 
 /* Define to 1 if you have the `setresuid' function. */
-/* Hacking ... */
-#define HAVE_SETRESUID 1
-#define setresuid(x, y, z) setuid(x)
+#undef HAVE_SETRESUID
 
 /* Define to 1 if you have the `setreuid' function. */
 /* Hacking...*/
 #define HAVE_SETREUID 1
-#define setreuid(x, y) setuid(x)
+#define setreuid(...) 0 
 
 /* Define to 1 if you have the `setsid' function. */
 #define HAVE_SETSID 1
