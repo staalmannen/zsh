@@ -106,9 +106,9 @@ tzsh            = zsh
 
 # installation directories
 prefix          = /sys
-exec_prefix     = /386
+exec_prefix     = /$(objtype)
 bindir          = ${exec_prefix}/bin
-libdir          = /386/lib/ape
+libdir          = /$(objtype)/lib/ape
 MODDIR          = $(libdir)/$(tzsh)/$(VERSION)
 infodir         = ${datarootdir}/info
 mandir          = ${datarootdir}/man
@@ -135,7 +135,7 @@ DLCFLAGS        =
 DLLDFLAGS       = 
 LIBLDFLAGS      =  -s
 EXELDFLAGS      =  -s
-LIBS            = -L/386/lib/ape -lpcre -lsocket -lcurses true -lm  -lc
+LIBS            = -L/$(objtype)/lib/ape -lpcre -lsocket -lcurses true -lm  -lc
 DL_EXT          = 
 DLLD            = 
 EXPOPT          = 
