@@ -57,8 +57,8 @@ SUBDIRS =
 # This must also serve as a shell script, so do not add spaces around the
 # `=' signs.
 
-VERSION=5.8.0.2-dev
-VERSION_DATE='March 19, 2020'
+VERSION=5.9-dev
+VERSION_DATE='April 07, 2024'
 
 # source/build directories
 
@@ -107,9 +107,9 @@ tzsh            = zsh
 
 # installation directories
 prefix          = /sys
-exec_prefix     = /386
+exec_prefix     = /$(objtype)
 bindir          = ${exec_prefix}/bin
-libdir          = /386/lib/ape
+libdir          = /$(objtype)/lib/ape
 MODDIR          = $(libdir)/$(tzsh)/$(VERSION)
 infodir         = ${datarootdir}/info
 mandir          = ${datarootdir}/man
@@ -136,7 +136,7 @@ DLCFLAGS        =
 DLLDFLAGS       = 
 LIBLDFLAGS      =  -s
 EXELDFLAGS      =  -s
-LIBS            = -lpcre -lcurses -lterm
+LIBS            = -lpcre -lcurses
 DL_EXT          = 
 DLLD            = 
 EXPOPT          = 
