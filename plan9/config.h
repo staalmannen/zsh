@@ -1,3 +1,4 @@
+/* manually edited for Plan9-specific stuff */
 /* config.h.  Generated from config.h.in by configure.  */
 /* config.h.in.  Generated from configure.ac by autoheader.*/
 
@@ -73,7 +74,7 @@
 /* #undef DEBUG */
 
 /* The default path; used when running commands with command -p */
-#define DEFAULT_PATH "/bin:/usr/bin"
+#define DEFAULT_PATH "/bin"
 
 /* Define default pager used by readnullcmd */
 #define DEFAULT_READNULLCMD "cat"
@@ -1039,7 +1040,7 @@
 /* #undef LONG_IS_64_BIT */
 
 /* Define to be the machine type (microprocessor class or machine model). */
-#define MACHTYPE "i386"
+#define MACHTYPE "$objtype"
 
 /* Define for Maildir support */
 /* #undef MAILDIR_SUPPORT */
@@ -1066,19 +1067,19 @@
 #define PACKAGE_BUGREPORT ""
 
 /* Define to the full name of this package. */
-#define PACKAGE_NAME ""
+#define PACKAGE_NAME "zsh"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING ""
+#define PACKAGE_STRING "zsh-5.9-plan9"
 
 /* Define to the one symbol short name of this package. */
-#define PACKAGE_TARNAME ""
+#define PACKAGE_TARNAME "zsh"
 
 /* Define to the home page for this package. */
 #define PACKAGE_URL ""
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION ""
+#define PACKAGE_VERSION "5.9"
 
 /* Define to the path of the /dev/fd filesystem. */
 /* #undef PATH_DEV_FD */
@@ -1233,9 +1234,9 @@
 #define ZSOCKLEN_T socklen_t
 
 /* Enable large inode numbers on Mac OS X 10.5.  */
-#ifndef _DARWIN_USE_64_BIT_INODE
-# define _DARWIN_USE_64_BIT_INODE 1
-#endif
+//#ifndef _DARWIN_USE_64_BIT_INODE
+//# define _DARWIN_USE_64_BIT_INODE 1
+//#endif
 
 /* Number of bits in a file offset, on hosts where this is settable. */
 /* #undef _FILE_OFFSET_BITS */

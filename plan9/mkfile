@@ -1,0 +1,116 @@
+APE=/sys/src/ape
+<$APE/config
+
+TARG=zsh
+BIN=/$objtype/bin
+
+OFILES=\
+  #Src\
+    main.$O\
+    builtin.$O\
+    compat.$O\
+    cond.$O\
+    context.$O\
+    exec.$O\
+    glob.$O\
+    hashtable.$O\
+    hashnameddir.$O\
+    hist.$O\
+    init.$O\
+    input.$O\
+    jobs.$O\
+    lex.$O\
+    linklist.$O\
+    loop.$O\
+    math.$O\
+    mem.$O\
+    module.$O\
+    options.$O\
+    params.$O\
+    parse.$O\
+    pattern.$O\
+    prompt.$O\
+    signals.$O\
+    signames.$O\
+    sort.$O\
+    string.$O\
+    subst.$O\
+    text.$O\
+    utils.$O\
+    watch.$O\
+    openssh_bsd_setres_id.$O
+  #Src/Builtins\
+    rlimits.$O
+    sched.$O
+    datetime.$O
+  #Src/Modules\
+    langinfo.$O\
+    parameter.$O\
+    termcap.$O\
+    zutil.$O\
+  #Src/Zle\
+    compctl.$O\
+    complete.$O\
+    compcore.$O\
+    compmatch.$O\
+    compresult.$O\
+    complist.$O\
+    computil.$O\
+    zle_bindings.$O\
+    zle_hist.$O\
+    zle_keymap.$O\
+    zle_main.$O\
+    zle_misc.$O\
+    zle_move.$O\
+    zle_params.$O\
+    zle_refresh.$O\
+    zle_thingy.$O\
+    zle_tricky.$O\
+    zle_utils.$O\
+    zle_vi.$O\
+    zle_word.$O\
+    textobjects.$O\
+    zleparameter.$O
+
+</sys/src/cmd/mkone
+
+MAN1 = zsh zshbuiltin zshcalsys zshcompctl zshcompwid zshcompsys \
+zshcontrib zshexpn zshmisc zshmodules \
+zshoptions zshparam zshroadmap zshtcpsys zshzftpsys zshzle \
+zshall
+
+CC=pcc
+LD=pcc
+CPPFLAGS= -c -I. -I../Src -I/sys/include/ape -DPCRE_STATIC -DRLIM_INFINITY
+CFLAGS= -DHAVE_CONFIG_H -D_POSIX_SOURCE -D_SUSV2_SOURCE -D_RESEARCH_SOURCE -D_REENTRANT_SOURCE -D_BSD_EXTENSION \
+        -D_NET_EXTENSION -D_LIMITS_EXTENSION -D_C99_SNPRINTF_EXTENSION -D_REGEXP_EXTENSION -DHAVE_SOCK_OPTS
+LDFLAGS= -lpcre -lcurses
+
+
+%.$O: ../Src/%.c
+	$CC $CPPFLAGS $CFLAGS ../Src/$stem.c
+
+%.$O: ../Src/Builtins/%.c
+	$CC $CPPFLAGS $CFLAGS ../Src/Builtins/$stem.c
+
+%.$O: ../Src/Modules/%.c
+	$CC $CPPFLAGS $CFLAGS ../Src/Modules/$stem.c
+
+%.$O: ../Src/Zle/%.c
+	$CC $CPPFLAGS $CFLAGS ../Src/Zle/$stem.c
+
+install:V:
+  cp $O.zsh $BIN/zsh
+  for (i in $MAN1)
+    @{ cp ../Doc/$i.1 /sys/man/1/$i }
+
+install-sh:V:
+  cp $O.zsh $BIN/ape/sh
+
+nuke:V:
+  rm -f $BIN/zsh
+  for (i in $MAN1)
+    @{ rm -f /sys/man/1/$i }
+
+uninstall-sh:V:
+  cd $APE/cmd/pdksh && mk install
