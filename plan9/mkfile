@@ -38,11 +38,11 @@ OFILES=\
     text.$O\
     utils.$O\
     watch.$O\
-    openssh_bsd_setres_id.$O
+    openssh_bsd_setres_id.$O\
   #Src/Builtins\
-    rlimits.$O
-    sched.$O
-    datetime.$O
+    rlimits.$O\
+    sched.$O\
+    datetime.$O\
   #Src/Modules\
     langinfo.$O\
     parameter.$O\
