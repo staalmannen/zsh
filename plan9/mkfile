@@ -88,16 +88,25 @@ LDFLAGS= -lpcre -lcurses
 
 
 %.$O: ../Src/%.c
+        touch $stem.pro &&\
 	$CC $CPPFLAGS $CFLAGS ../Src/$stem.c
 
 %.$O: ../Src/Builtins/%.c
+        touch $stem.pro &&\
 	$CC $CPPFLAGS $CFLAGS ../Src/Builtins/$stem.c
 
 %.$O: ../Src/Modules/%.c
+        touch $stem.pro &&\
 	$CC $CPPFLAGS $CFLAGS ../Src/Modules/$stem.c
 
 %.$O: ../Src/Zle/%.c
+        touch $stem.pro &&\
 	$CC $CPPFLAGS $CFLAGS ../Src/Zle/$stem.c
+
+clean:V:
+  rm *.$O
+  rm *.pro
+  rm $O.zsh
 
 install:V:
   cp $O.zsh $BIN/zsh
