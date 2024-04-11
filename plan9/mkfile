@@ -105,7 +105,6 @@ LDFLAGS= -lpcre -lcurses
 
 clean:V:
   rm *.$O
-  rm *.pro
   rm $O.zsh
 
 install:V:

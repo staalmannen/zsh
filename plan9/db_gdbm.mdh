@@ -1,0 +1,37 @@
+#ifndef have_zshQsdbQsgdbm_module
+#define have_zshQsdbQsgdbm_module
+
+# ifndef IMPORTING_MODULE_zshQsdbQsgdbm
+#  ifndef MODULE
+#   define boot_ boot_zshQsdbQsgdbm
+#   define cleanup_ cleanup_zshQsdbQsgdbm
+#   define features_ features_zshQsdbQsgdbm
+#   define enables_ enables_zshQsdbQsgdbm
+#   define setup_ setup_zshQsdbQsgdbm
+#   define finish_ finish_zshQsdbQsgdbm
+#  endif /* !MODULE */
+# endif /* !IMPORTING_MODULE_zshQsdbQsgdbm */
+
+/* Module dependencies */
+# define IMPORTING_MODULE_zshQsmain 1
+# include "../../Src/zsh.mdh"
+
+# undef mod_import_variable
+# undef mod_import_function
+# if defined(IMPORTING_MODULE_zshQsdbQsgdbm) &&  defined(MODULE)
+#  define mod_import_variable 
+#  define mod_import_function 
+# else
+#  define mod_import_function
+#  define mod_import_variable
+# endif /* IMPORTING_MODULE_zshQsdbQsgdbm && MODULE */
+# include "db_gdbm.epro"
+# undef mod_import_variable
+# define mod_import_variable
+# undef mod_import_variable
+# define mod_import_variable
+# ifndef mod_export
+#  define mod_export 
+# endif /* mod_export */
+
+#endif /* !have_zshQsdbQsgdbm_module */
