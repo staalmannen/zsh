@@ -104,16 +104,16 @@ LDFLAGS= -lpcre -lcurses
 	$CC $CPPFLAGS $CFLAGS ../Src/Zle/$stem.c
 
 clean:V:
-  rm *.$O
-  rm $O.zsh
+  rm -f *.$O
+  rm -f zsh
 
 install:V:
-  cp $O.zsh $BIN/zsh
+  cp zsh $BIN/zsh
   for (i in $MAN1)
     @{ cp ../Doc/$i.1 /sys/man/1/$i }
 
 install-sh:V:
-  cp $O.zsh $BIN/ape/sh
+  cp zsh $BIN/ape/sh
 
 nuke:V:
   rm -f $BIN/zsh

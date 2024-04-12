@@ -2,6 +2,10 @@
 /* config.h.  Generated from config.h.in by configure.  */
 /* config.h.in.  Generated from configure.ac by autoheader.*/
 
+/* Hacks */
+#define _(x) x
+#define UNUSED(x) /*nothing*/
+
 /***** begin user configuration section *****/
 
 /* Define this to be the location of your password file */
